@@ -12,7 +12,7 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *webForwardButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *webRefreshButton;
 
-- (void)loadURLFromString:(NSString*)urlString;
+- (void)loadURLFromString:(NSString *)urlString;
 - (void)updateButtons;
 
 @end
@@ -23,7 +23,6 @@
 {
     [super viewDidLoad];
     
-    _webView.delegate = self;
     [self loadURLFromString:@"https://www.bottlerocketstudios.com/"];
 }
 

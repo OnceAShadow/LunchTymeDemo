@@ -6,6 +6,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class LTARestaurant;
+
 @interface LTADetailView : UIViewController
+
+@property (nonatomic, strong) LTARestaurant *restaurant;
 
 @end

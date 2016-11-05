@@ -5,21 +5,46 @@
 //  Copyright © 2016 Fred Sevillano All rights reserved.
 
 #import "LTAListView.h"
+#import "LTAWebDataParser.h"
+#import "LTAWebAPIHandler.h"
+#import "LTARestaurant.h"
 
-@interface LTAListView ()
+@interface LTAListView () <LTAWebDataParserDelegate>
+
+@property (nonatomic, strong) NSArray *restaurantArray;
+@property (nonatomic, strong) LTAWebDataParser *dataParser;
 
 @end
 
 @implementation LTAListView
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
+    _restaurantArray = [NSArray alloc];
+    
+    _dataParser = [LTAWebDataParser new];
+    _dataParser.delegate = self;
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [LTAWebAPIHandler getRestaurantData:^(NSData *restaurantData) {
+            [_dataParser parseRestaurantData:restaurantData];
+        }];
+    });
 }
 
-- (void)didReceiveMemoryWarning {
+#pragma Mark: LTAWebDataParser
+
+- (void)updateData:(NSArray *)parsedData
+{
+    _restaurantArray = parsedData;
+    //reload
+}
+
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

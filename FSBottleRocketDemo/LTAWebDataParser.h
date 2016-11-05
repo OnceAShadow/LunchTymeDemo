@@ -6,6 +6,16 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol LTAWebDataParserDelegate <NSObject>
+
+- (void)updateData:(NSArray *)parsedData;
+
+@end
+
 @interface LTAWebDataParser : NSObject
+
+@property (nonatomic, weak) id<LTAWebDataParserDelegate> delegate;
+
+- (void)parseRestaurantData:(NSData *)data;
 
 @end

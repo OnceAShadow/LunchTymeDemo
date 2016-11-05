@@ -8,4 +8,6 @@
 
 @interface LTAWebAPIHandler : NSObject
 
++ (void)getRestaurantData:(void (^)(NSData *restaurantData))completion;
+
 @end
