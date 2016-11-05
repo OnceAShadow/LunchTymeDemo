@@ -9,12 +9,17 @@
 /* Begin PBXBuildFile section */
 		83C43D201DCD08100058D4FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C43D1F1DCD08100058D4FD /* main.m */; };
 		83C43D231DCD08100058D4FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C43D221DCD08100058D4FD /* AppDelegate.m */; };
-		83C43D261DCD08100058D4FD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C43D251DCD08100058D4FD /* ViewController.m */; };
 		83C43D291DCD08100058D4FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83C43D271DCD08100058D4FD /* Main.storyboard */; };
 		83C43D2B1DCD08100058D4FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83C43D2A1DCD08100058D4FD /* Assets.xcassets */; };
 		83C43D2E1DCD08100058D4FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83C43D2C1DCD08100058D4FD /* LaunchScreen.storyboard */; };
 		83C43D391DCD08100058D4FD /* FSBottleRocketDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C43D381DCD08100058D4FD /* FSBottleRocketDemoTests.m */; };
 		83C43D441DCD08100058D4FD /* FSBottleRocketDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C43D431DCD08100058D4FD /* FSBottleRocketDemoUITests.m */; };
+		83C43D561DCD36F90058D4FD /* LTAListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C43D551DCD36F90058D4FD /* LTAListView.m */; };
+		83C43D591DCD37240058D4FD /* LTADetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C43D581DCD37240058D4FD /* LTADetailView.m */; };
+		83C43D5C1DCD37450058D4FD /* LTAWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C43D5B1DCD37450058D4FD /* LTAWebView.m */; };
+		83C43D681DCD44CF0058D4FD /* LTARestaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C43D671DCD44CF0058D4FD /* LTARestaurant.m */; };
+		83C43D6B1DCD454A0058D4FD /* LTAWebAPIHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C43D6A1DCD454A0058D4FD /* LTAWebAPIHandler.m */; };
+		83C43D6E1DCD45890058D4FD /* LTAWebDataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C43D6D1DCD45890058D4FD /* LTAWebDataParser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +44,6 @@
 		83C43D1F1DCD08100058D4FD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		83C43D211DCD08100058D4FD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		83C43D221DCD08100058D4FD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		83C43D241DCD08100058D4FD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		83C43D251DCD08100058D4FD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		83C43D281DCD08100058D4FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		83C43D2A1DCD08100058D4FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		83C43D2D1DCD08100058D4FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +54,18 @@
 		83C43D3F1DCD08100058D4FD /* FSBottleRocketDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FSBottleRocketDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		83C43D431DCD08100058D4FD /* FSBottleRocketDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSBottleRocketDemoUITests.m; sourceTree = "<group>"; };
 		83C43D451DCD08100058D4FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83C43D541DCD36F90058D4FD /* LTAListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTAListView.h; sourceTree = "<group>"; };
+		83C43D551DCD36F90058D4FD /* LTAListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTAListView.m; sourceTree = "<group>"; };
+		83C43D571DCD37240058D4FD /* LTADetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTADetailView.h; sourceTree = "<group>"; };
+		83C43D581DCD37240058D4FD /* LTADetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTADetailView.m; sourceTree = "<group>"; };
+		83C43D5A1DCD37450058D4FD /* LTAWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTAWebView.h; sourceTree = "<group>"; };
+		83C43D5B1DCD37450058D4FD /* LTAWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTAWebView.m; sourceTree = "<group>"; };
+		83C43D661DCD44CF0058D4FD /* LTARestaurant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTARestaurant.h; sourceTree = "<group>"; };
+		83C43D671DCD44CF0058D4FD /* LTARestaurant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTARestaurant.m; sourceTree = "<group>"; };
+		83C43D691DCD454A0058D4FD /* LTAWebAPIHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTAWebAPIHandler.h; sourceTree = "<group>"; };
+		83C43D6A1DCD454A0058D4FD /* LTAWebAPIHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTAWebAPIHandler.m; sourceTree = "<group>"; };
+		83C43D6C1DCD45890058D4FD /* LTAWebDataParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTAWebDataParser.h; sourceTree = "<group>"; };
+		83C43D6D1DCD45890058D4FD /* LTAWebDataParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTAWebDataParser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,13 +116,11 @@
 		83C43D1D1DCD08100058D4FD /* FSBottleRocketDemo */ = {
 			isa = PBXGroup;
 			children = (
-				83C43D211DCD08100058D4FD /* AppDelegate.h */,
-				83C43D221DCD08100058D4FD /* AppDelegate.m */,
-				83C43D241DCD08100058D4FD /* ViewController.h */,
-				83C43D251DCD08100058D4FD /* ViewController.m */,
+				83C43D531DCD36940058D4FD /* LunchViews */,
+				83C43D521DCD35FD0058D4FD /* Model */,
+				83C43D511DCD35EA0058D4FD /* WebAPI */,
 				83C43D271DCD08100058D4FD /* Main.storyboard */,
 				83C43D2A1DCD08100058D4FD /* Assets.xcassets */,
-				83C43D2C1DCD08100058D4FD /* LaunchScreen.storyboard */,
 				83C43D2F1DCD08100058D4FD /* Info.plist */,
 				83C43D1E1DCD08100058D4FD /* Supporting Files */,
 			);
@@ -117,6 +130,9 @@
 		83C43D1E1DCD08100058D4FD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				83C43D2C1DCD08100058D4FD /* LaunchScreen.storyboard */,
+				83C43D211DCD08100058D4FD /* AppDelegate.h */,
+				83C43D221DCD08100058D4FD /* AppDelegate.m */,
 				83C43D1F1DCD08100058D4FD /* main.m */,
 			);
 			name = "Supporting Files";
@@ -138,6 +154,39 @@
 				83C43D451DCD08100058D4FD /* Info.plist */,
 			);
 			path = FSBottleRocketDemoUITests;
+			sourceTree = "<group>";
+		};
+		83C43D511DCD35EA0058D4FD /* WebAPI */ = {
+			isa = PBXGroup;
+			children = (
+				83C43D691DCD454A0058D4FD /* LTAWebAPIHandler.h */,
+				83C43D6A1DCD454A0058D4FD /* LTAWebAPIHandler.m */,
+				83C43D6C1DCD45890058D4FD /* LTAWebDataParser.h */,
+				83C43D6D1DCD45890058D4FD /* LTAWebDataParser.m */,
+			);
+			name = WebAPI;
+			sourceTree = "<group>";
+		};
+		83C43D521DCD35FD0058D4FD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				83C43D661DCD44CF0058D4FD /* LTARestaurant.h */,
+				83C43D671DCD44CF0058D4FD /* LTARestaurant.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		83C43D531DCD36940058D4FD /* LunchViews */ = {
+			isa = PBXGroup;
+			children = (
+				83C43D541DCD36F90058D4FD /* LTAListView.h */,
+				83C43D551DCD36F90058D4FD /* LTAListView.m */,
+				83C43D571DCD37240058D4FD /* LTADetailView.h */,
+				83C43D581DCD37240058D4FD /* LTADetailView.m */,
+				83C43D5A1DCD37450058D4FD /* LTAWebView.h */,
+				83C43D5B1DCD37450058D4FD /* LTAWebView.m */,
+			);
+			name = LunchViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,8 +322,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83C43D261DCD08100058D4FD /* ViewController.m in Sources */,
+				83C43D591DCD37240058D4FD /* LTADetailView.m in Sources */,
+				83C43D561DCD36F90058D4FD /* LTAListView.m in Sources */,
+				83C43D5C1DCD37450058D4FD /* LTAWebView.m in Sources */,
+				83C43D6E1DCD45890058D4FD /* LTAWebDataParser.m in Sources */,
+				83C43D6B1DCD454A0058D4FD /* LTAWebAPIHandler.m in Sources */,
 				83C43D231DCD08100058D4FD /* AppDelegate.m in Sources */,
+				83C43D681DCD44CF0058D4FD /* LTARestaurant.m in Sources */,
 				83C43D201DCD08100058D4FD /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,6 +482,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = EventHorizon.FSBottleRocketDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -439,6 +494,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = EventHorizon.FSBottleRocketDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

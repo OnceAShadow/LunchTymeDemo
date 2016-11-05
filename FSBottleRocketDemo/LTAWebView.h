@@ -1,4 +1,4 @@
-//  AppDelegate.h
+//  LTAWebView.h
 //  FSBottleRocketDemo
 //
 //  Created by Fred Sevillano on 11/4/16.
@@ -6,10 +6,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface LTAWebView : UIViewController
 
-@property (strong, nonatomic) UIWindow *window;
-
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
 
 @end
-

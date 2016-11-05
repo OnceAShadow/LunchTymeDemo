@@ -1,4 +1,4 @@
-//  AppDelegate.h
+//  LTAListView.h
 //  FSBottleRocketDemo
 //
 //  Created by Fred Sevillano on 11/4/16.
@@ -6,10 +6,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
-
+@interface LTAListView : UIViewController
 
 @end
-

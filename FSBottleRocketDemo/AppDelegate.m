@@ -1,10 +1,8 @@
-//
 //  AppDelegate.m
 //  FSBottleRocketDemo
 //
-//  Created by iOS MAC on 11/4/16.
-//  Copyright © 2016 iOS MAC. All rights reserved.
-//
+//  Created by Fred Sevillano on 11/4/16.
+//  Copyright © 2016 Fred Sevillano All rights reserved.
 
 #import "AppDelegate.h"
 
