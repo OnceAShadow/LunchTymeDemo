@@ -9,10 +9,12 @@
 #import "LTAWebAPIHandler.h"
 #import "LTARestaurant.h"
 
-@interface LTAListView () <LTAWebDataParserDelegate>
+@interface LTAListView () <LTAWebDataParserDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (nonatomic, strong) NSArray *restaurantArray;
 @property (nonatomic, strong) LTAWebDataParser *dataParser;
+
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @end
 
@@ -46,5 +48,7 @@
 {
     [super didReceiveMemoryWarning];
 }
+
+
 
 @end

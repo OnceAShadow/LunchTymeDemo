@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		83116F551DCDEFAF00E9B3BC /* LTAListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 83116F541DCDEFAF00E9B3BC /* LTAListViewCell.m */; };
 		83C43D201DCD08100058D4FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C43D1F1DCD08100058D4FD /* main.m */; };
 		83C43D231DCD08100058D4FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C43D221DCD08100058D4FD /* AppDelegate.m */; };
 		83C43D291DCD08100058D4FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83C43D271DCD08100058D4FD /* Main.storyboard */; };
@@ -40,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		83116F531DCDEFAF00E9B3BC /* LTAListViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTAListViewCell.h; sourceTree = "<group>"; };
+		83116F541DCDEFAF00E9B3BC /* LTAListViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTAListViewCell.m; sourceTree = "<group>"; };
 		83C43D1B1DCD08100058D4FD /* FSBottleRocketDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FSBottleRocketDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83C43D1F1DCD08100058D4FD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		83C43D211DCD08100058D4FD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -185,6 +188,8 @@
 				83C43D581DCD37240058D4FD /* LTADetailView.m */,
 				83C43D5A1DCD37450058D4FD /* LTAWebView.h */,
 				83C43D5B1DCD37450058D4FD /* LTAWebView.m */,
+				83116F531DCDEFAF00E9B3BC /* LTAListViewCell.h */,
+				83116F541DCDEFAF00E9B3BC /* LTAListViewCell.m */,
 			);
 			name = LunchViews;
 			sourceTree = "<group>";
@@ -329,6 +334,7 @@
 				83C43D6B1DCD454A0058D4FD /* LTAWebAPIHandler.m in Sources */,
 				83C43D231DCD08100058D4FD /* AppDelegate.m in Sources */,
 				83C43D681DCD44CF0058D4FD /* LTARestaurant.m in Sources */,
+				83116F551DCDEFAF00E9B3BC /* LTAListViewCell.m in Sources */,
 				83C43D201DCD08100058D4FD /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -563,6 +569,7 @@
 				83C43D4A1DCD08100058D4FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		83C43D4B1DCD08100058D4FD /* Build configuration list for PBXNativeTarget "FSBottleRocketDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -571,6 +578,7 @@
 				83C43D4D1DCD08100058D4FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		83C43D4E1DCD08100058D4FD /* Build configuration list for PBXNativeTarget "FSBottleRocketDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -579,6 +587,7 @@
 				83C43D501DCD08100058D4FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
