@@ -8,7 +8,7 @@
 
 @protocol LTAWebDataParserDelegate <NSObject>
 
-- (void)updateData:(NSArray *)parsedData;
+- (void)updateData:(NSMutableArray *)parsedData;
 
 @end
 

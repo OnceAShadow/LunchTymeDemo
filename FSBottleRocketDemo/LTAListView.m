@@ -8,10 +8,11 @@
 #import "LTAWebDataParser.h"
 #import "LTAWebAPIHandler.h"
 #import "LTARestaurant.h"
+#import "LTAListViewCell.h"
 
 @interface LTAListView () <LTAWebDataParserDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource>
 
-@property (nonatomic, strong) NSArray *restaurantArray;
+@property (nonatomic, strong) NSMutableArray *restaurantArray;
 @property (nonatomic, strong) LTAWebDataParser *dataParser;
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
@@ -24,10 +25,12 @@
 {
     [super viewDidLoad];
     
-    _restaurantArray = [NSArray alloc];
+    _restaurantArray = [NSMutableArray new];
     
     _dataParser = [LTAWebDataParser new];
     _dataParser.delegate = self;
+    
+    [_collectionView registerClass:[LTAListViewCell class] forCellWithReuseIdentifier:@"Cell"];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [LTAWebAPIHandler getRestaurantData:^(NSData *restaurantData) {
@@ -38,17 +41,42 @@
 
 #pragma Mark: LTAWebDataParser
 
-- (void)updateData:(NSArray *)parsedData
+- (void)updateData:(NSMutableArray *)parsedData
 {
     _restaurantArray = parsedData;
-    //reload
+    [_collectionView reloadData];
+}
+
+#pragma Mark: UICollectionView
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 1;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return [_restaurantArray count];
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+
+    LTAListViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
+    
+    LTARestaurant *resto = _restaurantArray[indexPath.row];
+    //cell.backgroundColor = [UIColor whiteColor];
+    
+    //cell.imageView.image = [UIImage imageNamed:@"cellGradientBackground@2x.png"];
+    
+    [cell.restaurantName setText:resto.name];
+    
+    return cell;
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
 }
-
-
 
 @end

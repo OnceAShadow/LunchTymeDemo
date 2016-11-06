@@ -9,18 +9,18 @@
 
 @interface LTARestaurant : NSObject
 
-@property(nonatomic, strong)NSString *name;
-@property(nonatomic, strong)NSString *imageURL;
-@property(nonatomic, strong)NSString *category;
-@property(nonatomic, strong)NSString *phone;
-@property(nonatomic, strong)NSString *twitter;
-@property(nonatomic, strong)NSString *address;
-@property(nonatomic, strong)NSString *postalCode;
-@property(nonatomic, strong)NSString *city;
-@property(nonatomic, strong)NSString *state;
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *imageURL;
+@property (nonatomic, strong) NSString *category;
+@property (nonatomic, strong) NSString *phone;
+@property (nonatomic, strong) NSString *twitter;
+@property (nonatomic, strong) NSString *address;
+@property (nonatomic, strong) NSString *postalCode;
+@property (nonatomic, strong) NSString *city;
+@property (nonatomic, strong) NSString *state;
 
-@property(nonatomic)CGFloat lat;
-@property(nonatomic)CGFloat lng;
+@property (nonatomic) CGFloat lat;
+@property (nonatomic) CGFloat lng;
 
 - (instancetype)initWithName:(NSString *)name;
 
