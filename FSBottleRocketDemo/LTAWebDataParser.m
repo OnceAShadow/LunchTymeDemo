@@ -6,6 +6,7 @@
 
 #import "LTAWebDataParser.h"
 #import "LTARestaurant.h"
+#import "LTAWebAPIHandler.h"
 
 @implementation LTAWebDataParser
 
@@ -52,6 +53,7 @@
             }
         }
         
+        // Once parsing is finished dispatch to the main thread for UI Update.
         dispatch_async(dispatch_get_main_queue(), ^{
             [_delegate updateData:restaurants];
         });
