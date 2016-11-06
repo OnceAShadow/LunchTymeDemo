@@ -30,8 +30,6 @@
     _dataParser = [LTAWebDataParser new];
     _dataParser.delegate = self;
     
-    [_collectionView registerClass:[LTAListViewCell class] forCellWithReuseIdentifier:@"Cell"];
-    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [LTAWebAPIHandler getRestaurantData:^(NSData *restaurantData) {
             [_dataParser parseRestaurantData:restaurantData];
@@ -61,15 +59,13 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-
     LTAListViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
     
+    cell.imageView.image = [UIImage imageNamed:@"cellGradientBackground.png"];
+    
     LTARestaurant *resto = _restaurantArray[indexPath.row];
-    //cell.backgroundColor = [UIColor whiteColor];
-    
-    //cell.imageView.image = [UIImage imageNamed:@"cellGradientBackground@2x.png"];
-    
     [cell.restaurantName setText:resto.name];
+    [cell.restaurantCategory setText:resto.category];
     
     return cell;
 }
