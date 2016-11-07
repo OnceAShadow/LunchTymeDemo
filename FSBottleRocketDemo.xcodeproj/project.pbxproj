@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		83116F551DCDEFAF00E9B3BC /* LTAListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 83116F541DCDEFAF00E9B3BC /* LTAListViewCell.m */; };
+		8312B3EE1DD036FF007891A3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8312B3ED1DD036FF007891A3 /* MapKit.framework */; };
 		83C43D201DCD08100058D4FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C43D1F1DCD08100058D4FD /* main.m */; };
 		83C43D231DCD08100058D4FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C43D221DCD08100058D4FD /* AppDelegate.m */; };
 		83C43D291DCD08100058D4FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83C43D271DCD08100058D4FD /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 /* Begin PBXFileReference section */
 		83116F531DCDEFAF00E9B3BC /* LTAListViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTAListViewCell.h; sourceTree = "<group>"; };
 		83116F541DCDEFAF00E9B3BC /* LTAListViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTAListViewCell.m; sourceTree = "<group>"; };
+		8312B3ED1DD036FF007891A3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		83C43D1B1DCD08100058D4FD /* FSBottleRocketDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FSBottleRocketDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83C43D1F1DCD08100058D4FD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		83C43D211DCD08100058D4FD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8312B3EE1DD036FF007891A3 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +99,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8312B3EC1DD036FF007891A3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8312B3ED1DD036FF007891A3 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8312B3EF1DD03B08007891A3 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				83116F531DCDEFAF00E9B3BC /* LTAListViewCell.h */,
+				83116F541DCDEFAF00E9B3BC /* LTAListViewCell.m */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
 		83C43D121DCD080F0058D4FD = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +123,7 @@
 				83C43D371DCD08100058D4FD /* FSBottleRocketDemoTests */,
 				83C43D421DCD08100058D4FD /* FSBottleRocketDemoUITests */,
 				83C43D1C1DCD08100058D4FD /* Products */,
+				8312B3EC1DD036FF007891A3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -188,8 +209,7 @@
 				83C43D581DCD37240058D4FD /* LTADetailView.m */,
 				83C43D5A1DCD37450058D4FD /* LTAWebView.h */,
 				83C43D5B1DCD37450058D4FD /* LTAWebView.m */,
-				83116F531DCDEFAF00E9B3BC /* LTAListViewCell.h */,
-				83116F541DCDEFAF00E9B3BC /* LTAListViewCell.m */,
+				8312B3EF1DD03B08007891A3 /* Cell */,
 			);
 			name = LunchViews;
 			sourceTree = "<group>";

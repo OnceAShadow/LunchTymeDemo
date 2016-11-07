@@ -7,10 +7,12 @@
 #import "LTAListView.h"
 #import "LTAWebDataParser.h"
 #import "LTAWebAPIHandler.h"
-#import "LTARestaurant.h"
+#import "LTADetailView.h"
 #import "LTAListViewCell.h"
+#import "LTARestaurant.h"
 
-@interface LTAListView () <LTAWebDataParserDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource>
+
+@interface LTAListView () <LTAWebDataParserDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (nonatomic, strong) NSMutableArray *restaurantArray;
 @property (nonatomic, strong) LTAWebDataParser *dataParser;
@@ -35,6 +37,17 @@
             [_dataParser parseRestaurantData:restaurantData];
         }];
     });
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"toLunchDetails"])
+    {
+        LTADetailView *detailView = [segue destinationViewController];
+        LTARestaurant *resto = _restaurantArray[[_collectionView indexPathForCell:sender].row];
+        
+        [detailView setRestaurant:resto];
+    }
 }
 
 #pragma Mark: LTAWebDataParser
@@ -66,6 +79,23 @@
     LTARestaurant *resto = _restaurantArray[indexPath.row];
     [cell.restaurantName setText:resto.name];
     [cell.restaurantCategory setText:resto.category];
+    
+    // Temp Image Loading.
+    cell.imageView.image = nil;
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        
+        NSString *imgLink = resto.imageURL;
+        
+        UIImage * img = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:imgLink]]];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            LTAListViewCell * cell = (LTAListViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+            
+            cell.imageView.image = img;
+        });
+    });
     
     return cell;
 }

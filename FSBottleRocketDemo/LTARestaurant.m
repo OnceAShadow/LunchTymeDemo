@@ -8,6 +8,29 @@
 
 @implementation LTARestaurant
 
+- (instancetype)init
+{
+    self = [super init];
+    
+    if (self)
+    {
+        _name = @"";
+        _imageURL = @"";
+        _category = @"";
+        _phone = @"";
+        _twitter = @"";
+        _address = @"";
+        _postalCode = @"";
+        _city = @"";
+        _state = @"";
+        
+        _lat = 0;
+        _lng = 0;
+    }
+    
+    return self;
+}
+
 - (instancetype)initWithName:(NSString *)name
 {
     self = [super init];
