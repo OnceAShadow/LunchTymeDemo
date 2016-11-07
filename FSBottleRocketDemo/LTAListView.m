@@ -11,11 +11,11 @@
 #import "LTAListViewCell.h"
 #import "LTARestaurant.h"
 
-
 @interface LTAListView () <LTAWebDataParserDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (nonatomic, strong) NSMutableArray *restaurantArray;
 @property (nonatomic, strong) LTAWebDataParser *dataParser;
+@property (nonatomic, strong) NSCache *imageCache;
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
@@ -28,6 +28,7 @@
     [super viewDidLoad];
     
     _restaurantArray = [NSMutableArray new];
+    _imageCache = [NSCache new];
     
     _dataParser = [LTAWebDataParser new];
     _dataParser.delegate = self;
@@ -80,24 +81,36 @@
     [cell.restaurantName setText:resto.name];
     [cell.restaurantCategory setText:resto.category];
     
-    // Temp Image Loading method. Cache Needed
     cell.imageView.image = nil;
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        
-        NSString *imgLink = resto.imageURL;
-        
-        UIImage * img = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:imgLink]]];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
+    if ([_imageCache objectForKey:resto.imageURL])
+    {
+        cell.imageView.image = [_imageCache objectForKey:resto.imageURL];
+    }
+    else
+    {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             
-            LTAListViewCell * cell = (LTAListViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+            UIImage * img = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:resto.imageURL]]];
             
-            cell.imageView.image = img;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                LTAListViewCell * cell = (LTAListViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+                [_imageCache setObject:img forKey:resto.imageURL];
+                cell.imageView.image = img;
+            });
         });
-    });
-    
+    }
+
     return cell;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    CGFloat width = collectionView.frame.size.width;
+    CGFloat height = 180;
+    
+    return CGSizeMake(width, height);
 }
 
 - (void)didReceiveMemoryWarning

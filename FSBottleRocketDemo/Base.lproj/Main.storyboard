@@ -131,6 +131,9 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="4Ut-LB-J96">
                                 <rect key="frame" x="0.0" y="64" width="375" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="Mt6-Hd-rsG"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="delegate" destination="oVq-ya-OlG" id="ehZ-GL-fru"/>
                                 </connections>
@@ -190,7 +193,6 @@
                             <constraint firstItem="Dr8-C5-e3g" firstAttribute="leading" secondItem="C97-5R-Gnv" secondAttribute="leadingMargin" constant="-4" id="BiT-4U-4fQ"/>
                             <constraint firstItem="iH3-Uh-z6l" firstAttribute="top" secondItem="daN-3P-rT5" secondAttribute="bottom" constant="26" id="ERN-lV-ITS"/>
                             <constraint firstItem="Dr8-C5-e3g" firstAttribute="leading" secondItem="E7X-7h-bwX" secondAttribute="leading" id="Ira-mp-iWV"/>
-                            <constraint firstItem="Ajt-mo-jbQ" firstAttribute="top" secondItem="bNj-8o-YQo" secondAttribute="bottom" constant="211" id="Kyt-WT-tNJ"/>
                             <constraint firstItem="qCr-oO-Utn" firstAttribute="top" secondItem="4Ut-LB-J96" secondAttribute="bottom" id="Lga-vI-hoQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bNj-8o-YQo" secondAttribute="trailing" constant="74" id="T0d-LF-xEB"/>
                             <constraint firstItem="wId-KF-hfx" firstAttribute="top" secondItem="E7X-7h-bwX" secondAttribute="bottom" constant="26" id="UZY-Rp-hbV"/>
@@ -272,7 +274,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EEa-YP-D5a">
+                            <webView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EEa-YP-D5a">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
