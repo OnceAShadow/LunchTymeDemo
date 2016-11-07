@@ -80,7 +80,7 @@
     [cell.restaurantName setText:resto.name];
     [cell.restaurantCategory setText:resto.category];
     
-    // Temp Image Loading.
+    // Temp Image Loading method. Cache Needed
     cell.imageView.image = nil;
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{

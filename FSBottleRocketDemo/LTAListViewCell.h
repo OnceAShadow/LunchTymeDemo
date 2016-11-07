@@ -8,8 +8,9 @@
 
 @interface LTAListViewCell : UICollectionViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *restaurantName;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIImageView *gradientView;
+@property (weak, nonatomic) IBOutlet UILabel *restaurantName;
 @property (weak, nonatomic) IBOutlet UILabel *restaurantCategory;
 
 @end

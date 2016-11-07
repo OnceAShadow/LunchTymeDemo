@@ -34,21 +34,48 @@
                 [restaurant setImageURL:[resto valueForKey:@"backgroundImageURL"]];
                 [restaurant setCategory:[resto valueForKey:@"category"]];
                 
-                NSDictionary *contact = resto[@"contact"];
+                // id is used to check is Dictionary is valid.
+                id contact = resto[@"contact"];
+                if([contact isKindOfClass:[NSDictionary class]])
+                {
+                    if( [contact objectForKey:@"formattedPhone"])
+                    {
+                        [restaurant setPhone:[contact valueForKey:@"formattedPhone"]];
+                    }
+                    
+                    if( [contact objectForKey:@"twitter"])
+                    {
+                        [restaurant setTwitter:[NSString stringWithFormat:@"@%@",[contact valueForKey:@"twitter"]]];
+                    }
+                }
                 
-                [restaurant setPhone:[contact valueForKey:@"formattedPhone"]];
-                [restaurant setTwitter:[contact valueForKey:@"twitter"]];
-                
-                NSDictionary *location = resto[@"location"];
-
-                [restaurant setAddress:[location valueForKey:@"address"]];
-                [restaurant setPostalCode:[location valueForKey:@"postalCode"]];
-                [restaurant setCity:[location valueForKey:@"city"]];
-                [restaurant setState:[location valueForKey:@"state"]];
-                
-                [restaurant setLat:[[location valueForKey:@"lat"]doubleValue]];
-                [restaurant setLng:[[location valueForKey:@"lng"]doubleValue]];
-                
+                id location = resto[@"location"];
+                if([location isKindOfClass:[NSDictionary class]])
+                {
+                    if([location objectForKey:@"address"])
+                    {
+                        [restaurant setAddress:[location valueForKey:@"address"]];
+                    }
+                    
+                    if([location objectForKey:@"postalCode"])
+                    {
+                        [restaurant setPostalCode:[location valueForKey:@"postalCode"]];
+                    }
+                    
+                    if([location objectForKey:@"city"])
+                    {
+                        [restaurant setCity:[location valueForKey:@"city"]];
+                    }
+                    
+                    if([location objectForKey:@"state"])
+                    {
+                        [restaurant setState:[location valueForKey:@"state"]];
+                    }
+                    
+                    [restaurant setLat:[[location valueForKey:@"lat"]doubleValue]];
+                    [restaurant setLng:[[location valueForKey:@"lng"]doubleValue]];
+                }
+            
                 [restaurants addObject:restaurant];
             }
         }
