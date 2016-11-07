@@ -33,6 +33,7 @@
     _dataParser = [LTAWebDataParser new];
     _dataParser.delegate = self;
     
+    //Fetch the Web Data on the background thread.
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [LTAWebAPIHandler getRestaurantData:^(NSData *restaurantData) {
             [_dataParser parseRestaurantData:restaurantData];
@@ -47,6 +48,7 @@
         LTADetailView *detailView = [segue destinationViewController];
         LTARestaurant *resto = _restaurantArray[[_collectionView indexPathForCell:sender].row];
         
+        //We pass the restaurant object to the detailView
         [detailView setRestaurant:resto];
     }
 }
@@ -89,10 +91,12 @@
     }
     else
     {
+        //Downloading the images in the background
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             
             UIImage * img = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:resto.imageURL]]];
             
+            //Updating the UI on the main thread
             dispatch_async(dispatch_get_main_queue(), ^{
                 
                 LTAListViewCell * cell = (LTAListViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
@@ -105,6 +109,7 @@
     return cell;
 }
 
+// This is to make sure the cells are as wide as the screen.
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     CGFloat width = collectionView.frame.size.width;
